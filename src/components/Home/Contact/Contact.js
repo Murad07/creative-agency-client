@@ -1,0 +1,37 @@
+import React from 'react';
+import './Contact.css';
+const Contact = () => {
+    return (
+       <section className="contact my-5 py-5">
+           <div className="container">
+               <div className="row pt-3">
+                   <div className="col-md-6 section-header brand-text mb-5">
+                        <h1>Let us handle your <br/> project, professionally.</h1>
+                        <p className='pt-3'>
+                            With well written codes, we build amazing apps for all <br/>
+                             platforms, mobile and web apps in general.
+                        </p>
+                    </div>
+                    <div className="col-md-6 mx-auto">
+                        <form action="">
+                            <div className="form-group">
+                                <input type="text" className="form-control" placeholder="Your email address"/>
+                            </div>
+                            <div className="form-group">
+                                <input type="text" className="form-control" placeholder="Your name / Company's name"/>
+                            </div>
+                            <div className="form-group">
+                                <textarea name="" className="form-control" id="" cols="30" rows="10" placeholder="Your message"></textarea>
+                            </div>
+                            <div className="form-group">
+                                <button style={{width: '170px', height: '45px'}} type="button" className="btn brand-btn"> Send </button>
+                            </div>
+                        </form>
+                    </div>
+               </div>
+           </div>
+       </section>
+    );
+};
+
+export default Contact;

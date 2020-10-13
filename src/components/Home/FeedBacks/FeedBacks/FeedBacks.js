@@ -32,7 +32,7 @@ const infos = [
 const FeedBacks = () => {
     return (
         <div className='mt-5'>
-            <h3 className='text-center mb-5'>Clients <span style={{color: '#7ab259'}}>Feedback</span></h3>
+            <h3 className='text-center mb-5 brand-text'>Clients <span style={{color: '#7ab259'}}>Feedback</span></h3>
 
             <div className='row mx-3'>
                 {
