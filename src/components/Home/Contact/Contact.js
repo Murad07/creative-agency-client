@@ -1,8 +1,8 @@
 import React from 'react';
-import './Contact.css';
+
 const Contact = () => {
     return (
-       <section className="contact my-5 py-5">
+       <section className="my-5 py-5" style={{backgroundColor: '#fbd062'}}>
            <div className="container">
                <div className="row pt-3">
                    <div className="col-md-6 section-header brand-text mb-5">
@@ -29,6 +29,7 @@ const Contact = () => {
                         </form>
                     </div>
                </div>
+               <p className='brand-text text-center pt-5 mt-4'>copyright Orange labs 2020</p>
            </div>
        </section>
     );
