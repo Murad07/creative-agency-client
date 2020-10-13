@@ -8,7 +8,7 @@ import {
 import Home from './components/Home/Home/Home';
 import Login from './components/Login/Login/Login';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
-import UserDashboard from './components/UserOption/UserDashboard/UserDashboard';
+import UserDashboard from './components/UserOption/UserDashboard/UserDashboard/UserDashboard';
 
 export const UserContext = createContext();
 

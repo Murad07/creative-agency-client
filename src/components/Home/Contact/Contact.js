@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contact = () => {
     return (
-       <section className="my-5 py-5" style={{backgroundColor: '#fbd062'}}>
+       <section className="mt-5 pt-5 pb-3" style={{backgroundColor: '#fbd062'}}>
            <div className="container">
                <div className="row pt-3">
                    <div className="col-md-6 section-header brand-text mb-5">
