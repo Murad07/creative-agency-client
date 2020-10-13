@@ -21,3 +21,9 @@
   width: 300px;
   height: 40px;
 }
+
+.loginLink {
+  cursor: pointer;
+  color: #7bb3fd;
+  text-decoration: underline;
+}

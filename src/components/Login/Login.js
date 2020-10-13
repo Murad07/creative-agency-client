@@ -47,7 +47,7 @@ const Login = () => {
   };
 
   return (
-    <div className='container'>
+    <div className='container mt-5'>
       <div className='row justify-content-md-center'>
         <div className='col-xs-12 col-sm-4 col-md-4 m-auto'>
           <Link to='/'>
@@ -75,6 +75,7 @@ const Login = () => {
               Continue With Google
             </button>
           </div>
+          <p>Don't have an account?  <a className='loginLink' onClick={googleSignIn}>Create an account</a></p>
         </div>
       </div>
     </div>
