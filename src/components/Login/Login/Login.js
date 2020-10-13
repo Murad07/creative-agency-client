@@ -3,48 +3,44 @@ import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConfig from './firebase.config';
 import { Link, useHistory, useLocation } from 'react-router-dom';
-import { UserContext } from '../../App';
-import logo from '../../images/logos/logo.png'
-import googleImg from '../../images/logos/googleIcon.png';
+import { UserContext } from '../../../App';
+import logo from '../../../images/logos/logo.png'
+import googleImg from '../../../images/logos/googleIcon.png';
 import './Login.css';
 
-firebase.initializeApp(firebaseConfig);
 
 const Login = () => {
-  const [user, setUser] = useState({
-    isSignIn: false,
-    name: '',
-    email: '',
-  });
-
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const history = useHistory();
   const location = useLocation();
+  const { from } = location.state || { from: { pathname: "/" } };
 
-  let { from } = location.state || { from: { pathname: '/' } };
+  if (firebase.apps.length === 0) {
+    firebase.initializeApp(firebaseConfig);
+  }
 
-  const googleProvider = new firebase.auth.GoogleAuthProvider();
+  const handleGoogleSignIn = () => {
+    var provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider).then(function (result) {
+      const { displayName, email } = result.user;
+      const signedInUser = { name: displayName, email }
+      setLoggedInUser(signedInUser);
+      storeAuthToken();
+    }).catch(function (error) {
+      const errorMessage = error.message;
+      console.log(errorMessage);
+    });
+  }
 
-  const googleSignIn = () => {
-    firebase
-      .auth()
-      .signInWithPopup(googleProvider)
-      .then((res) => {
-        const { displayName, email } = res.user;
-        const signInUser = {
-          isSignIn: true,
-          name: displayName,
-          email: email,
-        };
-        console.log(res);
-        setUser(signInUser);
-        setLoggedInUser(signInUser);
+  const storeAuthToken = () => {
+    firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
+      .then(function (idToken) {
+        sessionStorage.setItem('token', idToken);
         history.replace(from);
-      })
-      .catch((err) => {
-        console.log(err.message);
+      }).catch(function (error) {
+        // Handle error
       });
-  };
+  }
 
   return (
     <div className='container mt-5'>
@@ -64,7 +60,7 @@ const Login = () => {
         <div className='mx-auto'>
           <h5 className='text-center'>Login With</h5>
           <div className='pt-3'>
-            <button onClick={googleSignIn} className='socialBtn'>
+            <button onClick={handleGoogleSignIn} className='socialBtn'>
               <img
                 src={googleImg}
                 height='25'
@@ -75,7 +71,7 @@ const Login = () => {
               Continue With Google
             </button>
           </div>
-          <p>Don't have an account?  <a className='loginLink' onClick={googleSignIn}>Create an account</a></p>
+          <p>Don't have an account?  <a className='loginLink' onClick={handleGoogleSignIn}>Create an account</a></p>
         </div>
       </div>
     </div>
