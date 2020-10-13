@@ -1,5 +1,10 @@
 .carousel-inner {
-  /* width: 50%; */
   margin: auto;
-  /* max-height: 300px !important; */
+}
+
+.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: #fbd062;
 }
