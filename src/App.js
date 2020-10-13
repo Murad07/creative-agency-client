@@ -6,7 +6,7 @@ import {
   Route
 } from "react-router-dom";
 import Home from './components/Home/Home/Home';
-// import Login from './components/Login/Login/Login';
+import Login from './components/Login/Login';
 
 export const UserContext = createContext();
 
@@ -16,9 +16,9 @@ function App() {
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <Switch>
-          {/* <Route path="/login">
+          <Route path="/login">
             <Login></Login>
-          </Route> */}
+          </Route>
           <Route exact path="/">
             <Home></Home>
           </Route>
