@@ -55,7 +55,7 @@ const Review = () => {
                     <Sidebar serviceName={serviceName}></Sidebar>
                 </div>
                 <div className='col-md-10'>
-                    <h5 className="text-brand ml-5 pl-4 mt-4 mb-3">Order</h5>
+                    <h5 className="text-brand ml-5 pl-4 mt-4 mb-3">Review</h5>
                     <div className="col-md-10 py-5 ml-5" style={formContainer}>
                         <form onSubmit={handleSubmit} className="w-50"> 
                             <div className="form-group">

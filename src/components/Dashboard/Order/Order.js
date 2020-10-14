@@ -23,11 +23,15 @@ const Order = ({serviceName}) => {
 
     const handleSubmit = () => {
         const formData = new FormData()
-        console.log(info);
+        
         formData.append('file', file);
         formData.append('name', info.name);
         formData.append('email', info.email);
-        formData.append('serviceName', info.serviceName);
+        {
+            info.serviceName ? formData.append('serviceName', info.serviceName) :
+            formData.append('serviceName', serviceName);
+        }
+        
         formData.append('description', info.description);
         formData.append('price', info.price);
 
