@@ -30,7 +30,7 @@ const Navbar = () => {
                         <Link className="nav-link mr-5" to="/">Contact Us</Link>
                     </li>
 
-                    <Link to='/login'>
+                    <Link to={`/dashboard/${'empty'}`}>
                         <button style={{width: '134px', height:'45px'}} type="button" className="btn brand-btn">Login</button>
                     </Link>
                 </ul>

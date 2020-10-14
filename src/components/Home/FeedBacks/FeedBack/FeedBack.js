@@ -7,8 +7,6 @@ import customerThree from '../../../../images/customer-3.png';
 const FeedBack = ({info}) => {
     const imgs = [customerOne, customerTwo, customerThree];
     const rand = Math.floor(Math.random() * (2 - 0 + 1)) + 0;
-
-    console.log('img: ', info.img)
     {
         !info.img && (info.img = imgs[rand])
     }

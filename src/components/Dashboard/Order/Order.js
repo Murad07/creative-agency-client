@@ -55,7 +55,13 @@ const Order = ({serviceName}) => {
                         <input onBlur={handleBlur} type="email" className="form-control" name="email" placeholder="Your email address"/>
                     </div>
                     <div className="form-group">
-                        <input onBlur={handleBlur} type="text" className="form-control" name="serviceName" value={serviceName} />
+                        {
+                            (serviceName !== 'empty') ?
+                                <input onBlur={handleBlur} type="text" className="form-control" name="serviceName" value={serviceName} /> :
+                            
+                                <input onBlur={handleBlur} type="text" className="form-control" name="serviceName" placeholder="Service Name" />
+                            
+                        }
                     </div>
                     <div className="form-group">
                         <textarea onBlur={handleBlur} className="form-control" id="" cols="30" rows="6" placeholder="Project Details"></textarea>

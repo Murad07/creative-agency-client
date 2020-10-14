@@ -49,6 +49,22 @@ const Sidebar = ({serviceName}) => {
                         <FontAwesomeIcon icon={faCommentAlt} /> <span>Review</span>
                     </Link>
                 </li>
+
+                <li>
+                    <Link to="/allServiceList">
+                        <FontAwesomeIcon icon={faCommentAlt} /> <span>Service List</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/addService">
+                        <FontAwesomeIcon icon={faCommentAlt} /> <span>Add Service</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/addAdmin">
+                        <FontAwesomeIcon icon={faCommentAlt} /> <span>Make Admin</span>
+                    </Link>
+                </li>
             </ul>
         </div>
     );
