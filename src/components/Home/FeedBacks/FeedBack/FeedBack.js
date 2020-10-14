@@ -2,7 +2,6 @@ import React from 'react';
 import './FeedBack.css';
 
 const FeedBack = ({info}) => {
-    console.log(info)
     return (
         <div className="col-md-4 col-sm-6 mb-3">
             <div className="p-4 px-md-5 cardStyle">

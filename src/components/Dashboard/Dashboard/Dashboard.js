@@ -1,21 +1,24 @@
 import React from 'react';
-import UserSidebar from '../UserSidebar/UserSidebar';
+import { useParams } from 'react-router-dom';
+import Order from '../Order/Order';
+import Sidebar from '../Sidebar/Sidebar';
 
 
 const containerStyle = {
-    backgroundColor: "#F4FDFB",
+    // backgroundColor: "#F4FDFB",
     height:"100%"
 }
 
-const UserDashboard = () => {
+const Dashboard = () => {
+    let {serviceName} = useParams();
     return (
         <section>
             <div style={containerStyle} className="container-fluid row">
                 <div className="col-md-2">
-                    <UserSidebar></UserSidebar>
+                    <Sidebar></Sidebar>
                 </div>
                 <div className="col-md-10">
-                hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+                    <Order serviceName={serviceName}></Order>
                 </div>
                 
             </div>
@@ -23,4 +26,4 @@ const UserDashboard = () => {
     );
 };
 
-export default UserDashboard;
+export default Dashboard;

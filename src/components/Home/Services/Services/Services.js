@@ -6,20 +6,20 @@ import webD from '../../../../images/icons/service3.png';
 
 const infos = [
     {
-        title: 'First Itme',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, veniam',
+        name: 'Web & Mobile design',
+        description: 'We craft stunning and amazing web UI, using a well drrafted UX to fit your product.',
         img: webMobile,
 
     },
     {
-        title: 'Second Itme',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, veniam',
+        name: 'Graphic design',
+        description: 'Amazing flyers, social media posts and brand representations that would make your brand stand out.',
         img: graphicD,
         
     },
     {
-        title: 'Third Itme',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, veniam',
+        name: 'Web development',
+        description: 'With well written codes, we build amazing apps for all platforms, mobile and web apps in general.',
         img: webD,
         
     }
@@ -32,7 +32,7 @@ const Services = () => {
 
             <div className='row mx-3'>
                 {
-                    infos.map(info => <Service key={info.index} info={info}></Service>)
+                    infos.map((info, i) => <Service key={i} info={info}></Service>)
                 }
             </div>
         </div>

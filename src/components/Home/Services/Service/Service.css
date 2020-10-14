@@ -3,3 +3,11 @@
   border-radius: 10px;
   box-shadow: 0 0 30px 4px lightgray;
 }
+
+.serviceLink {
+  text-decoration: none;
+}
+
+.serviceLink:hover {
+  text-decoration: none;
+}

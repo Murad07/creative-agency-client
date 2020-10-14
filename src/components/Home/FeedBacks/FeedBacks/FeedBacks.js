@@ -36,7 +36,7 @@ const FeedBacks = () => {
 
             <div className='row mx-3'>
                 {
-                    infos.map(info => <FeedBack key={info.index} info={info}></FeedBack>)
+                    infos.map((info, i) => <FeedBack key={i} info={info}></FeedBack>)
                 }
             </div>
         </div>

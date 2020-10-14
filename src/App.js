@@ -8,7 +8,7 @@ import {
 import Home from './components/Home/Home/Home';
 import Login from './components/Login/Login/Login';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
-import UserDashboard from './components/UserOption/UserDashboard/UserDashboard/UserDashboard';
+import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 
 export const UserContext = createContext();
 
@@ -22,9 +22,9 @@ function App() {
             <Login></Login>
           </Route>
 
-          <PrivateRoute path='/userDashboard'>
-            <UserDashboard></UserDashboard>
-          </PrivateRoute>
+          <Route path='/dashboard/:serviceName'>
+            <Dashboard></Dashboard>
+          </Route>
 
           <Route exact path="/">
             <Home></Home>

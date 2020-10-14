@@ -1,0 +1,13 @@
+.formContainer {
+  position: absolute;
+  background-color: #f4fdfb;
+  width: 100%;
+}
+
+.imageLabel {
+  background-color: #deffed;
+  border: 1px solid #009444;
+  color: #009444;
+  font-family: sans-serif;
+  cursor: pointer;
+}

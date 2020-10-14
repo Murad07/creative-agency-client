@@ -15,7 +15,7 @@ const Contact = () => {
                     <div className="col-md-6 mx-auto">
                         <form action="">
                             <div className="form-group">
-                                <input type="text" className="form-control" placeholder="Your email address"/>
+                                <input type="email" className="form-control" placeholder="Your email address"/>
                             </div>
                             <div className="form-group">
                                 <input type="text" className="form-control" placeholder="Your name / Company's name"/>
