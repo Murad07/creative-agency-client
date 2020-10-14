@@ -10,6 +10,7 @@ const containerStyle = {
 
 const Dashboard = () => {
     let {serviceName} = useParams();
+
     return (
         <section>
             <div style={containerStyle} className="container-fluid row">
