@@ -59,13 +59,13 @@ const Review = () => {
                     <div className="col-md-10 py-5 ml-5" style={formContainer}>
                         <form onSubmit={handleSubmit} className="w-50"> 
                             <div className="form-group">
-                                <input onBlur={handleBlur} type="text" className="form-control" name="name" placeholder="Your name" />
+                                <input onBlur={handleBlur} type="text" className="form-control" name="name" placeholder="Your name" required/>
                             </div>
                             <div className="form-group">
-                                <input onBlur={handleBlur} type="text" className="form-control" name="designation" placeholder="Company’s name, Designation"/>
+                                <input onBlur={handleBlur} type="text" className="form-control" name="designation" placeholder="Company’s name, Designation" required/>
                             </div>
                             <div className="form-group">
-                                <textarea onBlur={handleBlur} className="form-control" id="" cols="30" rows="6" name="description" placeholder="Description"></textarea>
+                                <textarea onBlur={handleBlur} className="form-control" id="" cols="30" rows="6" name="description" placeholder="Description" required></textarea>
                             </div>
                             
                             <button style={{width: '170px', height: '45px'}} type="submit" className="btn brand-btn">Send</button>

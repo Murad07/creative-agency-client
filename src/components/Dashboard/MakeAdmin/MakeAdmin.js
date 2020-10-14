@@ -51,13 +51,13 @@ const MakeAdmin = () => {
                     <Sidebar serviceName={'empty'}></Sidebar>
                 </div>
                 <div className='col-md-10'>
-                    <h5 className="text-brand ml-5 pl-4 mt-4 mb-3">Order</h5>
+                    <h5 className="text-brand ml-5 pl-4 mt-4 mb-3">Make New Admin</h5>
                     <div className="col-md-10 py-5 ml-5" style={formContainer}>
                         <form onSubmit={handleSubmit} className="whiteBoard p-4"> 
                             <div className="form-group row">
                                 <div className="col-md-6">
                                     <label htmlFor="">Email</label>
-                                    <input onBlur={handleBlur} type="email" className="form-control" name="email" placeholder="jon@gamil.com" />
+                                    <input onBlur={handleBlur} type="email" className="form-control" name="email" placeholder="jon@gamil.com" required/>
                                 </div>
                                 <div className="col-2 pl-1">
                                 <button 

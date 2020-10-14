@@ -1,5 +1,7 @@
 import React from 'react';
+import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import { UserContext } from '../../../App';
 import Order from '../Order/Order';
 import Sidebar from '../Sidebar/Sidebar';
 
@@ -10,6 +12,8 @@ const containerStyle = {
 
 const Dashboard = () => {
     let {serviceName} = useParams();
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const isAdmin = loggedInUser.admin;
 
     return (
         <section>
@@ -18,7 +22,9 @@ const Dashboard = () => {
                     <Sidebar serviceName={serviceName}></Sidebar>
                 </div>
                 <div className="col-md-10">
-                    <Order serviceName={serviceName}></Order>
+                    {
+                        !isAdmin && <Order serviceName={serviceName}></Order>
+                    }
                 </div>
                 
             </div>

@@ -27,18 +27,21 @@ const Order = ({serviceName}) => {
         formData.append('file', file);
         formData.append('name', info.name);
         formData.append('email', info.email);
+        formData.append('serviceName', info.serviceName);
+        formData.append('description', info.description);
+        formData.append('price', info.price);
 
-        // fetch('http://localhost:5000/addADoctor', {
-        //     method: 'POST',
-        //     body: formData
-        // })
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         console.log(data)
-        //     })
-        //     .catch(error => {
-        //         console.error(error)
-        //     })
+        fetch('http://localhost:5000/addOrder', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+            })
+            .catch(error => {
+                console.error(error)
+            })
     }
 
 
@@ -49,29 +52,29 @@ const Order = ({serviceName}) => {
                 
                 <form onSubmit={handleSubmit} className="w-50"> 
                     <div className="form-group">
-                        <input onBlur={handleBlur} type="text" className="form-control" name="name" placeholder="Your name / Company's name" />
+                        <input onBlur={handleBlur} type="text" className="form-control" name="name" placeholder="Your name / Company's name" required/>
                     </div>
                     <div className="form-group">
-                        <input onBlur={handleBlur} type="email" className="form-control" name="email" placeholder="Your email address"/>
+                        <input onBlur={handleBlur} type="email" className="form-control" name="email" placeholder="Your email address" required/>
                     </div>
                     <div className="form-group">
                         {
                             (serviceName !== 'empty') ?
-                                <input onBlur={handleBlur} type="text" className="form-control" name="serviceName" value={serviceName} /> :
+                                <input onBlur={handleBlur} type="text" className="form-control" name="serviceName" value={serviceName} required/> :
                             
-                                <input onBlur={handleBlur} type="text" className="form-control" name="serviceName" placeholder="Service Name" />
+                                <input onBlur={handleBlur} type="text" className="form-control" name="serviceName" placeholder="Service Name" required/>
                             
                         }
                     </div>
                     <div className="form-group">
-                        <textarea onBlur={handleBlur} className="form-control" id="" cols="30" rows="6" placeholder="Project Details"></textarea>
+                        <textarea onBlur={handleBlur} className="form-control" id="" cols="30" rows="6" name="description" placeholder="Project Details" required></textarea>
                     </div>
                     <div className='row'> 
                         <div className="form-group col-md-6">
-                            <input onBlur={handleBlur} type="text" className="form-control" name="price" placeholder="Price" />
+                            <input onBlur={handleBlur} type="text" className="form-control" name="price" placeholder="Price" required/>
                         </div>
                         <div className="form-group col-md-6">
-                            <input hidden onChange={handleFileChange} type="file" className="form-control" id="imageUpload" placeholder="Picture" />
+                            <input hidden onChange={handleFileChange} type="file" className="form-control" name="file" id="imageUpload" placeholder="Picture" />
                             <label className='form-control imageLabel text-center' for="imageUpload">
                                 <FontAwesomeIcon icon={faUpload} /> 
                                 <span className='pl-2'> Upload project file </span>

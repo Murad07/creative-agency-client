@@ -64,7 +64,7 @@ const AddService = () => {
                 </div>
 
                 <div className='col-md-10'>
-                    <h5 className="text-brand ml-5 pl-4 mt-4 mb-3">Order</h5>
+                    <h5 className="text-brand ml-5 pl-4 mt-4 mb-3">Add Services</h5>
 
                     <div className="col-md-10 py-5 ml-5" style={formContainer}>
                         <form onSubmit={handleSubmit} className="whiteBoard"> 
@@ -72,11 +72,11 @@ const AddService = () => {
                                 <div className="form-group row">
                                     <div className="col-md-6">
                                         <label htmlFor="">Service Title</label>
-                                        <input onBlur={handleBlur} type="text" className="form-control" name="title" placeholder="Enter Title" />
+                                        <input onBlur={handleBlur} type="text" className="form-control" name="title" placeholder="Enter Title" required/>
                                     </div>
                                     <div className="col-3 pl-1">
                                         <label htmlFor="">Icon</label>
-                                        <input hidden onChange={handleFileChange} type="file" className="form-control" name="file" id="imageUpload" placeholder="Picture" />
+                                        <input hidden onChange={handleFileChange} type="file" className="form-control" name="file" id="imageUpload" placeholder="Picture" required/>
                                         <label className='form-control imageLabel text-center' for="imageUpload">
                                             <FontAwesomeIcon icon={faUpload} /> 
                                             <span className='pl-2'> Upload Image </span>
@@ -93,6 +93,7 @@ const AddService = () => {
                                             cols="10" rows="4" 
                                             name="description" 
                                             placeholder="Description"
+                                            required
                                             >
                                             </textarea>
                                         </div>
