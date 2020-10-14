@@ -6,7 +6,7 @@ import { faShoppingCart, faListAlt, faCommentAlt } from '@fortawesome/free-solid
 import { UserContext } from '../../../App';
 import logo from '../../../images/logos/logo.png'
 
-const Sidebar = () => {
+const Sidebar = ({serviceName}) => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     // useEffect(() => {
@@ -34,18 +34,18 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li className='active'>
-                    <Link to="/dashboard">
+                    <Link to={`/dashboard/${serviceName}`}>
                         <FontAwesomeIcon icon={faShoppingCart} /> <span>Order</span>
                     </Link>
                 </li>
             
                 <li>
-                    <Link to="/serviceList">
+                    <Link to={`/serviceList/${serviceName}`}>
                         <FontAwesomeIcon icon={faListAlt} /> <span>Service List</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/review">
+                    <Link to={`/review/${serviceName}`}>
                         <FontAwesomeIcon icon={faCommentAlt} /> <span>Review</span>
                     </Link>
                 </li>

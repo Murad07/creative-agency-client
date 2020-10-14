@@ -44,27 +44,12 @@ const Order = ({serviceName}) => {
 
     return (
         <div>
-            {/* <form action="">
-                <div className="form-group">
-                    <input type="text" className="form-control" placeholder="Your email address"/>
-                </div>
-                <div className="form-group">
-                    <input type="text" className="form-control" placeholder="Your name / Company's name"/>
-                </div>
-                <div className="form-group">
-                    <textarea name="" className="form-control" id="" cols="30" rows="10" placeholder="Your message"></textarea>
-                </div>
-                <div className="form-group">
-                    <button style={{width: '170px', height: '45px'}} type="button" className="btn brand-btn"> Send </button>
-                </div>
-            </form> */}
-
             <h5 className="text-brand ml-5 pl-4 mt-4 mb-3">Order</h5>
             <div className="col-md-10 py-5 ml-5 formContainer">
                 
                 <form onSubmit={handleSubmit} className="w-50"> 
                     <div className="form-group">
-                        <input onBlur={handleBlur} type="email" className="form-control" name="name" placeholder="Your name / Company's name" />
+                        <input onBlur={handleBlur} type="text" className="form-control" name="name" placeholder="Your name / Company's name" />
                     </div>
                     <div className="form-group">
                         <input onBlur={handleBlur} type="email" className="form-control" name="email" placeholder="Your email address"/>
