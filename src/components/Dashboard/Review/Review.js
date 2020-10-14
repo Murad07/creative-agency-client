@@ -17,37 +17,32 @@ const formContainer = {
 const Review = () => {
     let {serviceName} = useParams();
 
-        const [info, setInfo] = useState({});
-    const [file, setFile] = useState(null);
+    const [info, setInfo] = useState({});
+    
     const handleBlur = e => {
         const newInfo = { ...info };
         newInfo[e.target.name] = e.target.value;
         setInfo(newInfo);
     }
 
-    const handleFileChange = (e) => {
-        const newFile = e.target.files[0];
-        setFile(newFile);
-    }
-
     const handleSubmit = () => {
         const formData = new FormData()
         console.log(info);
-        formData.append('file', file);
         formData.append('name', info.name);
-        formData.append('email', info.email);
+        formData.append('designation', info.designation);
+        formData.append('description', info.description);
 
-        // fetch('http://localhost:5000/addADoctor', {
-        //     method: 'POST',
-        //     body: formData
-        // })
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         console.log(data)
-        //     })
-        //     .catch(error => {
-        //         console.error(error)
-        //     })
+        fetch('http://localhost:5000/addReview', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+            })
+            .catch(error => {
+                console.error(error)
+            })
     }
 
 
@@ -70,7 +65,7 @@ const Review = () => {
                                 <input onBlur={handleBlur} type="text" className="form-control" name="designation" placeholder="Company’s name, Designation"/>
                             </div>
                             <div className="form-group">
-                                <textarea onBlur={handleBlur} className="form-control" id="" cols="30" rows="6" placeholder="Description"></textarea>
+                                <textarea onBlur={handleBlur} className="form-control" id="" cols="30" rows="6" name="description" placeholder="Description"></textarea>
                             </div>
                             
                             <button style={{width: '170px', height: '45px'}} type="submit" className="btn brand-btn">Send</button>

@@ -1,4 +1,6 @@
 import React from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
 import customerOne from '../../../../images/customer-1.png';
 import customerTwo from '../../../../images/customer-2.png';
 import customerThree from '../../../../images/customer-3.png';
@@ -29,14 +31,26 @@ const infos = [
     }
 ]
 
+
 const FeedBacks = () => {
+
+    const [reviews, setReviews] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/reviews')
+        .then((res) => res.json())
+        .then((data) => setReviews(data));
+    }, []);
+
+    const newInfos = [...infos, ...reviews];
+    
     return (
         <div className='mt-5'>
             <h3 className='text-center mb-5 brand-text'>Clients <span style={{color: '#7ab259'}}>Feedback</span></h3>
 
             <div className='row mx-3'>
                 {
-                    infos.map((info, i) => <FeedBack key={i} info={info}></FeedBack>)
+                    newInfos.map((info, i) => <FeedBack key={i} info={info}></FeedBack>)
                 }
             </div>
         </div>
