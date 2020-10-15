@@ -18,10 +18,8 @@ const Dashboard = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const userEmail = sessionStorage.getItem('email');
     let isAdmin = loggedInUser.admin;
-    console.log('A: ', isAdmin)
 
     isAdmin = sessionStorage.getItem('isAdmin');
-    console.log('B: ', isAdmin)
 
     return (
         <section>

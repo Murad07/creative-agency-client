@@ -7,12 +7,12 @@ import SingleOrder from './SingleOrder';
 const CustomerOrders = () => {
     const [orders, setOrders] = useState([])
 
-    useEffect( () => {
-        fetch('http://localhost:5000/allOrders')
-        .then(res => res.json())
-        .then(data => setOrders(data))
-    }, [])
 
+    useEffect(() => {
+        fetch('http://localhost:5000/allOrders')
+        .then((res) => res.json())
+        .then((data) => setOrders(data));
+    }, []);
    
 
     return (

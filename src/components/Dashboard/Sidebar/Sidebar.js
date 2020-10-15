@@ -49,7 +49,7 @@ const Sidebar = ({serviceName}) => {
                     (isAdmin === 'true') &&
                     <div>
                         <li>
-                            <Link to={`/serviceList/${serviceName}`}>
+                            <Link to={`/dashboard/${serviceName}`}>
                                 <FontAwesomeIcon icon={faListAlt} /> <span>Service List</span>
                             </Link>
                         </li>
