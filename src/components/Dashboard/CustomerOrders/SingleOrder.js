@@ -2,18 +2,15 @@ import React from 'react';
 import { useState } from 'react';
 
 const SingleOrder = ({order}) => {
-    const [status, setStatus] = useState(order.status);
-    // const [statusColor, setStatusColor] = useState('#ff4545');
-    
+   const [status, setStatus] = useState(order.status);
+
+   // Daynamic text color of status
    let colors = ['#ff4545', '#f1c40f', '#009444'];
    let idx = 0;
 
-//    (status === 'Pending') && (setStatusColor('#ff4545'));
-//    (status === 'On going') && (setStatusColor('#f1c40f'));
-//    (status === 'Done') && (setStatusColor('#009444'))
-
-   let cStatus = order.status;
-   
+   (status === 'Pending') && (idx = 0);
+   (status === 'On going') && (idx = 1);
+   (status === 'Done') && (idx = 2);
 
    const handleStatus = (e) =>{
         setStatus(e.target.value);
@@ -22,6 +19,10 @@ const SingleOrder = ({order}) => {
    }
 
    const updateStatus = (newStatus) =>{
+        (status === 'Pending') && (idx = 0);
+        (status === 'On going') && (idx = 1);
+        (status === 'Done') && (idx = 2)
+
         const id = order._id;
         const formData = new FormData();
         formData.append('status', newStatus);
