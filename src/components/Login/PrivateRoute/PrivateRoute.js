@@ -6,20 +6,21 @@ import jwt_decode from "jwt-decode";
 
 const PrivateRoute = ({children, ...rest}) => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const userEmail = sessionStorage.getItem('email');
+    sessionStorage.setItem('isAdmin', loggedInUser.admin);
 
     useEffect(() => {
         fetch('http://localhost:5000/isAdmin', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
-            body: JSON.stringify({ email: loggedInUser.email })
+            body: JSON.stringify({ email: userEmail })
         })
             .then(res => res.json())
             .then(data => {
               setLoggedInUser({ name: loggedInUser.name, email: loggedInUser.email, admin: data })
+              sessionStorage.setItem('isAdmin', data);
             });
     }, [])
-
-    
     
     const isLoggedIn = () => {
       const token = sessionStorage.getItem('token');
@@ -31,6 +32,7 @@ const PrivateRoute = ({children, ...rest}) => {
       const currentTime = new Date().getTime() / 1000;
       return decodedToken.exp > currentTime;
     }
+
     return (
         <Route
       {...rest}

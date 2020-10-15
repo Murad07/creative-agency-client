@@ -1,14 +1,12 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Sidebar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faListAlt, faCommentAlt, faUserPlus, faPlus } from '@fortawesome/free-solid-svg-icons';
-import { UserContext } from '../../../App';
 import logo from '../../../images/logos/logo.png'
 
 const Sidebar = ({serviceName}) => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    const isAdmin = loggedInUser.admin;
+    const isAdmin = sessionStorage.getItem('isAdmin');
 
     return (
         <div className="sidebar d-flex flex-column justify-content-between col-md-2 pt-4 pb-5 px-4" style={{ height: "100vh" }}>
@@ -27,7 +25,7 @@ const Sidebar = ({serviceName}) => {
                 
 
                 {
-                    !isAdmin ?
+                    (isAdmin === 'false') &&
                     <div>
                         <li className='active'>
                             <Link to={`/dashboard/${serviceName}`}>
@@ -46,10 +44,12 @@ const Sidebar = ({serviceName}) => {
                             </Link>
                         </li>
                     </div>
-                    :
+                }
+                {
+                    (isAdmin === 'true') &&
                     <div>
                         <li>
-                            <Link to="/allServiceList">
+                            <Link to={`/serviceList/${serviceName}`}>
                                 <FontAwesomeIcon icon={faListAlt} /> <span>Service List</span>
                             </Link>
                         </li>

@@ -1,7 +1,9 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { UserContext } from '../../../App';
+import CustomerOrders from '../CustomerOrders/CustomerOrders';
 import Order from '../Order/Order';
 import Sidebar from '../Sidebar/Sidebar';
 
@@ -12,8 +14,14 @@ const containerStyle = {
 
 const Dashboard = () => {
     let {serviceName} = useParams();
+
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    const isAdmin = loggedInUser.admin;
+    const userEmail = sessionStorage.getItem('email');
+    let isAdmin = loggedInUser.admin;
+    console.log('A: ', isAdmin)
+
+    isAdmin = sessionStorage.getItem('isAdmin');
+    console.log('B: ', isAdmin)
 
     return (
         <section>
@@ -21,9 +29,14 @@ const Dashboard = () => {
                 <div className="col-md-2">
                     <Sidebar serviceName={serviceName}></Sidebar>
                 </div>
-                <div className="col-md-10">
+                <div className="col-md-10" >
                     {
-                        !isAdmin && <Order serviceName={serviceName}></Order>
+                        (isAdmin === 'false') && 
+                        (<Order serviceName={serviceName}></Order>) 
+                    }
+                    {
+                        (isAdmin === 'true') &&
+                        (<CustomerOrders serviceName={serviceName}></CustomerOrders>)
                     }
                 </div>
                 

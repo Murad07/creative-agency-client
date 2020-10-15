@@ -1,0 +1,13 @@
+.tableBg {
+  background-color: white;
+  border-radius: 10px;
+  height: 600px;
+}
+.headding {
+  background-color: #f5f6fa;
+  border-radius: 12px;
+  height: 45px;
+}
+.dropdown {
+  cursor: pointer;
+}
