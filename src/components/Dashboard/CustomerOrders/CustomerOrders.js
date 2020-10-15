@@ -9,7 +9,7 @@ const CustomerOrders = () => {
 
 
     useEffect(() => {
-        fetch('https://hidden-headland-70388.herokuapp.com/allOrders')
+        fetch('https://cryptic-inlet-22709.herokuapp.com/allOrders')
         .then((res) => res.json())
         .then((data) => setOrders(data));
     }, []);

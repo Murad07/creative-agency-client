@@ -7,7 +7,7 @@ const ServiceListCard = ({service}) => {
     const [order, setOrder] = useState([]);
     
     useEffect(() => {
-        fetch('https://hidden-headland-70388.herokuapp.com/orderByName?title=' + service.serviceName)
+        fetch('https://cryptic-inlet-22709.herokuapp.com/orderByName?title=' + service.serviceName)
         .then((res) => res.json())
         .then((date) => setOrder(date));
     }, []);

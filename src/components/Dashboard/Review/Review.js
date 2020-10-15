@@ -32,7 +32,7 @@ const Review = () => {
         formData.append('designation', info.designation);
         formData.append('description', info.description);
 
-        fetch('https://hidden-headland-70388.herokuapp.com/addReview', {
+        fetch('https://cryptic-inlet-22709.herokuapp.com/addReview', {
             method: 'POST',
             body: formData
         })

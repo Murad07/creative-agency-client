@@ -28,7 +28,7 @@ const MakeAdmin = () => {
         const formData = new FormData()
         formData.append('email', info.email);
 
-        fetch('https://hidden-headland-70388.herokuapp.com/addAdmin', {
+        fetch('https://cryptic-inlet-22709.herokuapp.com/addAdmin', {
             method: 'POST',
             body: formData
         })
