@@ -1,6 +1,10 @@
-.whiteBoard {
+.whiteBoardCard {
   background-color: white;
   border-radius: 10px;
-  height: 50px;
+  height: 240px;
   /* width: 90%; */
+}
+.statusBtn {
+  height: 45px;
+  width: 120px;
 }

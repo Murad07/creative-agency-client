@@ -5,10 +5,18 @@
 .sidebar li {
   margin-bottom: 2em;
 }
+.sidebar li span {
+  color: #263238;
+}
 .sidebar li:hover span {
   display: inline-block;
   transform: translate(5px);
+  color: #009444;
 }
 .sidebar svg {
   margin-right: 5px;
+  color: #263238;
+}
+.sidebar li:hover svg {
+  color: #009444;
 }

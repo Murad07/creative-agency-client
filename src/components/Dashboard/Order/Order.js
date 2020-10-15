@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './Order.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUpload } from '@fortawesome/free-solid-svg-icons';
+import { useHistory } from 'react-router-dom';
 
 
 
@@ -10,6 +11,9 @@ const Order = ({serviceName}) => {
 
     const [info, setInfo] = useState({});
     const [file, setFile] = useState(null);
+    
+    const history = useHistory();
+
     const handleBlur = e => {
         const newInfo = { ...info };
         newInfo[e.target.name] = e.target.value;
@@ -34,6 +38,7 @@ const Order = ({serviceName}) => {
         
         formData.append('description', info.description);
         formData.append('price', info.price);
+        formData.append('status', 'Pending');
 
         fetch('http://localhost:5000/addOrder', {
             method: 'POST',
@@ -41,10 +46,9 @@ const Order = ({serviceName}) => {
         })
             .then(response => response.json())
             .then(data => {
-                console.log(data)
-            })
-            .catch(error => {
-                console.error(error)
+                if (data) {
+                    history.push(`/serviceList/${serviceName}`);
+                }
             })
     }
 
