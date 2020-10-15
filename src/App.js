@@ -30,21 +30,21 @@ function App() {
             <Dashboard></Dashboard>
           </PrivateRoute>
 
-          <Route path='/serviceList/:serviceName'>
+          <PrivateRoute path='/serviceList/:serviceName'>
             <ServicesList></ServicesList>
-          </Route>
+          </PrivateRoute>
 
-          <Route path='/review/:serviceName'>
+          <PrivateRoute path='/review/:serviceName'>
             <Review></Review>
-          </Route>
+          </PrivateRoute>
 
-          <Route path='/addAdmin'>
+          <PrivateRoute path='/addAdmin'>
             <MakeAdmin></MakeAdmin>
-          </Route>
+          </PrivateRoute>
 
-          <Route path='/addService'>
+          <PrivateRoute path='/addService'>
             <AddService></AddService>
-          </Route>
+          </PrivateRoute>
 
           <Route exact path="/">
             <Home></Home>
