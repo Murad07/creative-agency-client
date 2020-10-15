@@ -12,7 +12,7 @@ const ServiceListCard = ({service}) => {
         .then((date) => setOrder(date));
     }, []);
 
-   let colorsBg = ['#ffe3e3', '#f9e79f', '#c6ffeo'];
+   let colorsBg = ['#ffe3e3', '#f9e79f', '#abebc6'];
    let colors = ['#ff4545', '#f1c40f', '#009444'];
    let idx = 0;
 
