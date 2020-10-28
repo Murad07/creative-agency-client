@@ -37,7 +37,7 @@ const FeedBacks = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('https://cryptic-inlet-22709.herokuapp.com/reviews')
+        fetch('https://hidden-headland-70388.herokuapp.com/reviews')
         .then((res) => res.json())
         .then((data) => setReviews(data));
     }, []);

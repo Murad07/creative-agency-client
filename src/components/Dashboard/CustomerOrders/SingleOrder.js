@@ -27,7 +27,7 @@ const SingleOrder = ({order}) => {
         const formData = new FormData();
         formData.append('status', newStatus);
          
-        fetch(`https://cryptic-inlet-22709.herokuapp.com/updateStatus/${id}`, {
+        fetch(`https://hidden-headland-70388.herokuapp.com/updateStatus/${id}`, {
           method: 'PATCH',
           body: formData,
         })

@@ -40,7 +40,7 @@ const Order = ({serviceName}) => {
         formData.append('price', info.price);
         formData.append('status', 'Pending');
 
-        fetch('https://cryptic-inlet-22709.herokuapp.com/addOrder', {
+        fetch('https://hidden-headland-70388.herokuapp.com/addOrder', {
             method: 'POST',
             body: formData
         })

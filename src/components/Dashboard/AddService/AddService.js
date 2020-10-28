@@ -34,7 +34,7 @@ const AddService = () => {
         formData.append('title', info.title);
         formData.append('description', info.description);
 
-        fetch('https://cryptic-inlet-22709.herokuapp.com/addService', {
+        fetch('https://hidden-headland-70388.herokuapp.com/addService', {
             method: 'POST',
             body: formData
         })

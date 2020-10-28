@@ -10,7 +10,7 @@ const PrivateRoute = ({children, ...rest}) => {
     sessionStorage.setItem('isAdmin', loggedInUser.admin);
 
     useEffect(() => {
-        fetch('https://cryptic-inlet-22709.herokuapp.com/isAdmin', {
+        fetch('https://hidden-headland-70388.herokuapp.com/isAdmin', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: userEmail })
