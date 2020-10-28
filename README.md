@@ -1,4 +1,23 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live Site: https://creative-agency-m.web.app/
+# Creative Agency
+
+### Features:
+-	Design landing page with an animated card of service offered by the agency.
+-	User and Admin Login system using firebase.
+-	Users can select a service and then manage it from the user panel. 
+-	User also make a review and it will show on the landing page review section.
+-	Make an admin panel for manage Order, create new service and assign new admin.
+
+### Frontend: 
+- HTML, CSS, Bootstrap, React Js, React Spring, React Router, JWT token, firebase.
+### Backend: 
+- Node Js, Express Js.
+- Database: MongoDB.
+
+
+### My Resume:
+https://drive.google.com/file/d/1W6qKPLEH2_wgVAi7cIFDV2ZrOXNLSKh-/view?usp=sharing
+
 
 ## Available Scripts
 
